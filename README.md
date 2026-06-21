@@ -1,6 +1,17 @@
-# Odysseus CA Templates
+# Unraid CA Templates
 
-Unraid Community Applications templates for [Odysseus](https://github.com/pewdiepie-archdaemon/odysseus) AI workspace and related services.
+A collection of Unraid Community Applications (CA) templates for Docker containers.
+
+## What are CA Templates?
+
+CA templates are XML files that define how Docker containers integrate with Unraid's Community Applications system. They enable one-click installation of Docker containers through the Unraid web interface. Each template specifies container configuration including:
+
+- Docker image and repository
+- Port mappings
+- Volume mounts
+- Environment variables
+- Container metadata (name, description, icons)
+- Support and project links
 
 ## Templates
 
@@ -34,6 +45,6 @@ Unraid Community Applications templates for [Odysseus](https://github.com/pewdie
 
 ## Links
 
-- [Odysseus](https://github.com/pewdiepie-archdaemon/odysseus)
+- [Unraid Community Applications](https://forums.unraid.net/topic/128970-community-applications/)
 - [Unraid Docker Template XML Schema](https://forums.unraid.net/topic/38619-docker-template-xml-schema/)
 - [Writing a template compatible for Unraid](https://selfhosters.net/docker/templating/templating/)
