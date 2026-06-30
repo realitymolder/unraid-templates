@@ -5,7 +5,7 @@ These templates use the **new combined architecture** (v0.65.0+) — management,
 ## Prerequisites
 
 1. A **public domain** pointed at your Unraid server (e.g., `netbird.yourdomain.com`)
-2. A **reverse proxy** (Nginx Proxy Manager, SWAG, Traefik) handling TLS termination
+2. A **reverse proxy** (Traefik, Caddy, Nginx Proxy Manager, SWAG) handling TLS termination
 3. A **`config.yaml`** — run NetBird's `getting-started.sh` on any Linux machine to generate one, then place it at `/mnt/user/appdata/netbird-server/config/config.yaml`
 4. TCP ports **80/443** and UDP port **3478** open on your firewall
 
@@ -25,7 +25,35 @@ Configure your reverse proxy to:
 
 Expose UDP port **3478** for STUN (required for NAT traversal).
 
-### Path Routing (Nginx Example)
+### Caddy
+
+```caddy
+netbird.yourdomain.com {
+    # Dashboard
+    reverse_proxy unraid-ip:8080
+
+    # gRPC paths (requires h2c transport)
+    @grpc {
+        path /signalexchange.SignalExchange/*
+        path /management.ManagementService/*
+        path /management.ProxyService/*
+    }
+    reverse_proxy @grpc unraid-ip:8081 {
+        transport h2c
+    }
+
+    # Relay, WebSocket, API, OAuth2
+    @backend {
+        path /relay*
+        path /ws-proxy/*
+        path /api*
+        path /oauth2*
+    }
+    reverse_proxy @backend unraid-ip:8081
+}
+```
+
+### Nginx
 
 ```nginx
 server {

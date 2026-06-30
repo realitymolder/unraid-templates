@@ -12,7 +12,7 @@
   <Category>Network:VPN</Category>
   <WebUI>http://[IP]:[PORT:8080]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/realitymolder/unraid-templates/main/templates/netbird-dashboard.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/netbirdio/netbird/main/docs/static/img/logo/logo-docs.png</Icon>
+  <Icon>https://raw.githubusercontent.com/realitymolder/unraid-templates/main/templates/img/netbird.png</Icon>
   <Requires>
     <Requires>NetBird-Server</Requires>
   </Requires>
