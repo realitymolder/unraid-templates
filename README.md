@@ -21,18 +21,6 @@ A collection of Unraid Community Applications (CA) templates for Docker containe
    ```
 3. Templates will appear under the **NetBird** and **Odysseus** categories
 
-### NetBird Setup Notes
-
-NetBird v0.65.0+ consolidated the old 5-container architecture into a single `netbird-server` container. These templates use the new combined architecture.
-
-Before installing the templates, you need:
-1. A **public domain** pointed at your Unraid server (e.g., `netbird.yourdomain.com`)
-2. A **reverse proxy** (Nginx Proxy Manager, SWAG, Traefik) handling TLS termination
-3. A **`config.yaml`** — run NetBird's `getting-started.sh` on any Linux machine to generate one, then copy it to `/mnt/user/appdata/netbird-server/config.yaml`
-4. TCP ports **80/443** and UDP port **3478** open on your firewall
-
-**Installation order:** Start `NetBird-Server` first, then `NetBird-Dashboard`. Configure your reverse proxy to route `netbird.yourdomain.com` → `NetBird-Server:8081` and expose port 3478/UDP for STUN.
-
 ## Adding New Templates
 
 1. Create an XML file following the [Unraid Docker Template XML Schema](https://forums.unraid.net/topic/38619-docker-template-xml-schema/)
