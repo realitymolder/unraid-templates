@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Maintainer>
-  <Icon>https://raw.githubusercontent.com/netbirdio/netbird/main/docs/static/img/logo/logo-docs.png</Icon>
-  <Profile>Unraid Community Applications templates for NetBird self-hosted mesh VPN and Odysseus AI workspace.</Profile>
+  <Icon>https://avatars.githubusercontent.com/u/26459151?v=4</Icon>
+  <Profile>RealityMolder's Repository</Profile>
   <WebPage>https://github.com/realitymolder/unraid-templates</WebPage>
   <Support>https://github.com/realitymolder/unraid-templates/issues</Support>
 </Maintainer>

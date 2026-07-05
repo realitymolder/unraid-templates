@@ -3,25 +3,101 @@
   <Repository>netbirdio/dashboard:latest</Repository>
   <Registry>https://hub.docker.com/r/netbirdio/dashboard</Registry>
   <Network>bridge</Network>
-  <MyIP/>
+  <MyIP />
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
   <Support>https://github.com/netbirdio/netbird/issues</Support>
   <Project>https://github.com/netbirdio/netbird</Project>
-  <Overview>NetBird web dashboard for managing peers, networks, access policies, and users in your self-hosted mesh VPN. Requires the NetBird-Server container and a reverse proxy for TLS.</Overview>
+  <Overview
+    >NetBird web dashboard for managing peers, networks, access policies, and users in your self-hosted mesh VPN. Requires the NetBird-Server container and a reverse proxy for TLS.</Overview>
   <Category>Network:VPN</Category>
   <WebUI>http://[IP]:[PORT:8080]</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/realitymolder/unraid-templates/main/templates/netbird-dashboard.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/realitymolder/unraid-templates/main/templates/img/netbird.png</Icon>
+  <TemplateURL
+    >https://raw.githubusercontent.com/realitymolder/unraid-templates/main/templates/netbird-dashboard.xml</TemplateURL>
+  <Icon
+    >https://raw.githubusercontent.com/realitymolder/unraid-templates/main/templates/img/netbird-dashboard.svg</Icon>
   <Requires>
     <Requires>NetBird-Server</Requires>
   </Requires>
-  <Config Name="Web Port" Target="80" Default="8080" Mode="tcp" Description="Dashboard web UI port" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
-  <Config Name="API Endpoint" Target="NETBIRD_MGMT_API_ENDPOINT" Default="https://netbird.yourdomain.com" Description="Public HTTPS URL of the management REST API" Type="Variable" Display="always" Required="true" Mask="false">https://netbird.yourdomain.com</Config>
-  <Config Name="gRPC Endpoint" Target="NETBIRD_MGMT_GRPC_API_ENDPOINT" Default="https://netbird.yourdomain.com" Description="Public HTTPS URL of the management gRPC API (same as API endpoint)" Type="Variable" Display="always" Required="true" Mask="false">https://netbird.yourdomain.com</Config>
-  <Config Name="Auth Authority" Target="AUTH_AUTHORITY" Default="https://netbird.yourdomain.com/oauth2" Description="OIDC issuer URL (embedded IdP lives at /oauth2)" Type="Variable" Display="always" Required="true" Mask="false">https://netbird.yourdomain.com/oauth2</Config>
-  <Config Name="Client ID" Target="AUTH_CLIENT_ID" Default="netbird-dashboard" Description="OAuth2 client ID registered with the IdP" Type="Variable" Display="always" Required="false" Mask="false">netbird-dashboard</Config>
-  <Config Name="Audience" Target="AUTH_AUDIENCE" Default="netbird-dashboard" Description="OAuth2 audience claim" Type="Variable" Display="always" Required="false" Mask="false">netbird-dashboard</Config>
-  <Config Name="Scopes" Target="AUTH_SUPPORTED_SCOPES" Default="openid profile email groups" Description="OAuth2 scopes to request" Type="Variable" Display="always" Required="false" Mask="false">openid profile email groups</Config>
-  <Config Name="Let's Encrypt Domain" Target="LETSENCRYPT_DOMAIN" Default="none" Description="Set to 'none' when behind a reverse proxy (most setups), or your domain for standalone" Type="Variable" Display="always" Required="false" Mask="false">none</Config>
+  <Config
+        Name="Web Port"
+        Target="80"
+        Default="8080"
+        Mode="tcp"
+        Description="Dashboard web UI port"
+        Type="Port"
+        Display="always"
+        Required="true"
+        Mask="false"
+    >8080</Config>
+  <Config
+        Name="API Endpoint"
+        Target="NETBIRD_MGMT_API_ENDPOINT"
+        Default="https://netbird.yourdomain.com"
+        Description="Public HTTPS URL of the management REST API"
+        Type="Variable"
+        Display="always"
+        Required="true"
+        Mask="false"
+    >https://netbird.yourdomain.com</Config>
+  <Config
+        Name="gRPC Endpoint"
+        Target="NETBIRD_MGMT_GRPC_API_ENDPOINT"
+        Default="https://netbird.yourdomain.com"
+        Description="Public HTTPS URL of the management gRPC API (same as API endpoint)"
+        Type="Variable"
+        Display="always"
+        Required="true"
+        Mask="false"
+    >https://netbird.yourdomain.com</Config>
+  <Config
+        Name="Auth Authority"
+        Target="AUTH_AUTHORITY"
+        Default="https://netbird.yourdomain.com/oauth2"
+        Description="OIDC issuer URL (embedded IdP lives at /oauth2)"
+        Type="Variable"
+        Display="always"
+        Required="true"
+        Mask="false"
+    >https://netbird.yourdomain.com/oauth2</Config>
+  <Config
+        Name="Client ID"
+        Target="AUTH_CLIENT_ID"
+        Default="netbird-dashboard"
+        Description="OAuth2 client ID registered with the IdP"
+        Type="Variable"
+        Display="always"
+        Required="false"
+        Mask="false"
+    >netbird-dashboard</Config>
+  <Config
+        Name="Audience"
+        Target="AUTH_AUDIENCE"
+        Default="netbird-dashboard"
+        Description="OAuth2 audience claim"
+        Type="Variable"
+        Display="always"
+        Required="false"
+        Mask="false"
+    >netbird-dashboard</Config>
+  <Config
+        Name="Scopes"
+        Target="AUTH_SUPPORTED_SCOPES"
+        Default="openid profile email groups"
+        Description="OAuth2 scopes to request"
+        Type="Variable"
+        Display="always"
+        Required="false"
+        Mask="false"
+    >openid profile email groups</Config>
+  <Config
+        Name="Let's Encrypt Domain"
+        Target="LETSENCRYPT_DOMAIN"
+        Default="none"
+        Description="Set to 'none' when behind a reverse proxy (most setups), or your domain for standalone"
+        Type="Variable"
+        Display="always"
+        Required="false"
+        Mask="false"
+    >none</Config>
 </Container>
